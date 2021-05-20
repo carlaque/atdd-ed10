@@ -15,7 +15,7 @@ public class Biblioteca {
     }
 
     public void save(Livro livro) throws Exception {
-        if (livro.getIsbn().equals("") || livro.getTitulo().equals("") )  
+        if (livro.getIsbn().equals("") || livro.getTitulo().equals("") || livro.getAutor().equals("") )  
             throw new Exception();
 
         for (Livro l : livros) {
