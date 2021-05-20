@@ -14,8 +14,16 @@ public class Biblioteca {
         this.livros = livros;
     }
 
-    public void save(Livro livro) {
+    public void save(Livro livro) throws Exception {
+        if (livro.getIsbn().equals("") || livro.getTitulo().equals("") )  
+            throw new Exception();
+
+        for (Livro l : livros) {
+            if (livro.equals(l))
+                throw new Exception();
+        }
         livros.add(livro);
+
     }
 
     public int size() {
